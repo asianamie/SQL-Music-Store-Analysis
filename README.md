@@ -22,7 +22,7 @@ SELECT
     company_location,
     salary_in_usd,
     global_role_coverage,
-    (salary_in_usd-global_role_average) AS compensation_variance,
+    (salary_in_usd-global_role_coverage) AS compensation_variance,
     CASE WHEN duplication_rank >1 THEN 'Flagged Duplicate'
     ELSE 'Verified Unique Record'
     END AS database_status
