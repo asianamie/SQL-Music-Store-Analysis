@@ -30,6 +30,15 @@ FROM RankedSalaries;
 
 -- Complete tracking query maintained in production_queries.sql
 ```
+## 🗺️ Data Pipeline Architecture
+```mermaid
+graph LR
+A[Raw Messy CSV Data] --> B[SQLite Staging Table]
+B --> C[UPPER Text Normalization]
+C --> D[Window Function Duplicate Tracking]
+D --> E[Calculated Salary Variance Output]
+E --> F[Tableau Executive Dashboard]
+```
 
 ## 📈 Strategic Insights Discovered
 1. **Classification Anomalies Detected:** Data entries contained mixed case structures and non-standard titles (e.g., `data analyst` vs `Data Analyst`). This variation skews raw metrics if not handled by explicit text manipulation tools.
