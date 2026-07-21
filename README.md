@@ -10,7 +10,7 @@ Corporate compensation infrastructure often suffers from fragmented data formatt
 ## 📊 Technical Architecture & Production Queries
 ```sql
 WITH RankedSalaries AS (
-    SELECT UPPER(job_title) AS employee_id, cleaned_title, company_location, salary_in_usd,
+    SELECT UPPER(job_title) AS cleaned_title, employee_id, company_location, salary_in_usd,
     ROW_NUMBER() OVER(PARTITION BY job_title, company_location, experience_level, salary_in_usd
     ORDER BY employee_id) as duplication_rank,
     AVG(salary_in_usd) OVER(PARTITION BY job_title) AS global_role_coverage
@@ -21,7 +21,7 @@ SELECT
     cleaned_title,
     company_location,
     salary_in_usd,
-    global_role_average,
+    global_role_coverage,
     (salary_in_usd-global_role_average) AS compensation_variance,
     CASE WHEN duplication_rank >1 THEN 'Flagged Duplicate'
     ELSE 'Verified Unique Record'
