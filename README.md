@@ -32,7 +32,7 @@ FROM RankedSalaries;
 ```
 ## 🗺️ Data Pipeline Architecture
 ```mermaid
-graph LR
+graph TD
 A[Raw Messy CSV Data] --> B[SQLite Staging Table]
 B --> C[UPPER Text Normalization]
 C --> D[Window Function Duplicate Tracking]
