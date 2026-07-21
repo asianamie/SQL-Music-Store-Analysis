@@ -31,6 +31,7 @@ FROM RankedSalaries;
 -- Complete tracking query maintained in production_queries.sql
 ```
 ## 🗺️ Data Pipeline Architecture
+
 ```mermaid
 graph TD
 A[Raw Messy CSV Data] --> B[SQLite Staging Table]
