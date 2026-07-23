@@ -1,5 +1,5 @@
-## 📊 Technical Architecture & Production Queries
-```sql
+-- 📊 Technical Architecture & Production Queries
+
 WITH RankedSalaries AS (
     SELECT UPPER(job_title) AS cleaned_title, employee_id, company_location, salary_in_usd,
     ROW_NUMBER() OVER(PARTITION BY job_title, company_location, experience_level, salary_in_usd
@@ -19,7 +19,7 @@ SELECT
     END AS database_status
 FROM RankedSalaries;
 
-## Finding the top 3 highest-paid job roles within each experience level (using a different dataset from above)
+-- Finding the top 3 highest-paid job roles within each experience level (using a different dataset from above)
 
 WITH RankedSalaries AS (
     SELECT 
@@ -41,7 +41,7 @@ SELECT
 FROM RankedSalaries
 WHERE salary_rank <= 3;
 
-## Find job titles whose average salary is higher than the overall company-wide average salary
+-- Find job titles whose average salary is higher than the overall company-wide average salary
     
 -- Step 1: Calculate the overall baseline salary across all roles
 WITH GlobalAverage AS (
@@ -69,7 +69,7 @@ CROSS JOIN GlobalAverage g
 WHERE r.role_avg > g.overall_avg
 ORDER BY pay_difference DESC;
 
-## Categorize pay into Low, Medium, and High bands, then count how many roles fall into each band (create conditional statements within query)
+-- Categorize pay into Low, Medium, and High bands, then count how many roles fall into each band (create conditional statements within query)
 
 SELECT 
     experience_level,
@@ -87,7 +87,7 @@ ORDER BY
     experience_level, 
     total_positions DESC;
 
-## Calculate the percentage pay increase from Mid-Level (MI) transitioning to Senior-Level (SE) across different job titles
+-- Calculate the percentage pay increase from Mid-Level (MI) transitioning to Senior-Level (SE) across different job titles
 -- Adding CASE WHEN with AVG function
 
 WITH ExperienceComparison AS (
@@ -107,5 +107,3 @@ SELECT
 FROM ExperienceComparison
 WHERE mid_avg_salary IS NOT NULL AND senior_avg_salary IS NOT NULL
 ORDER BY pct_increase DESC;
-
-```
