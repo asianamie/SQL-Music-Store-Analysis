@@ -12,8 +12,13 @@ Corporate compensation infrastructure often suffers from fragmented data formatt
 2. **Compensation Imbalances:** Mid-to-Senior level engineers exhibit salary variations up to **$21,500 over average baselines**, highlighting clear opportunities to optimize regional market bands.
 3. **Tiered Compensation Leaders**: Utilizing DENSE_RANK(), top-earning roles within each experience level consistently isolate specialized domain tracks (e.g., Machine Learning Infrastructure and Data Engineering) over generalist roles, establishing market ceilings for each tier.
 4. **Above-Market Role Benchmarking**: Cross-joining role averages against the global baseline (overall_avg) reveals which specialized titles command a premium, allowing organizations to spot high-cost functions exceeding global salary baselines.
+<img width="698" height="139" alt="image" src="https://github.com/user-attachments/assets/5c94b86b-793e-489f-a1e9-69bd61759cff" />
+   
 5. **Tier Distribution Across Seniority**: Categorizing compensation into explicit pay bands (<$80k, $80k–$150k, >$150k) highlights the shift from mid-pay density at entry/mid levels to heavy concentration in the high-pay tier (>$150k) for senior-level roles.
+<img width="657" height="255" alt="image" src="https://github.com/user-attachments/assets/503938e1-bfc0-44db-9fd7-4f26ff152c1b" />
+
 6. **Senior Transition Value Spike**: Pivoting experience levels (MI vs. SE) shows that transitioning from Mid to Senior yields significant percentage increases (up to ~46% in key data tracks like Data Engineer and Data Scientist), quantifying the exact economic reward of senior-level progression.
+<img width="556" height="192" alt="image" src="https://github.com/user-attachments/assets/da50fee9-3b8a-4784-b3e3-281081417a48" />
 
 ## 🗺️ Data Pipeline Architecture
 
