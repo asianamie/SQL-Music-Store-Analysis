@@ -10,3 +10,14 @@ Corporate compensation infrastructure often suffers from fragmented data formatt
 ## 📈 Strategic Insights Discovered
 1. **Classification Anomalies Detected:** Data entries contained mixed case structures and non-standard titles (e.g., `data analyst` vs `Data Analyst`). This variation skews raw metrics if not handled by explicit text manipulation tools.
 2. **Compensation Imbalances:** Mid-to-Senior level engineers exhibit salary variations up to **$21,500 over average baselines**, highlighting clear opportunities to optimize regional market bands.
+
+## 🗺️ Data Pipeline Architecture
+
+```mermaid
+graph TD
+A[Raw Messy CSV Data] --> B[SQLite Staging Table]
+B --> C[UPPER Text Normalization]
+C --> D[Window Function Duplicate Tracking]
+D --> E[Calculated Salary Variance Output]
+E --> F[Tableau Executive Dashboard]
+```
