@@ -109,13 +109,3 @@ WHERE mid_avg_salary IS NOT NULL AND senior_avg_salary IS NOT NULL
 ORDER BY pct_increase DESC;
 
 ```
-## 🗺️ Data Pipeline Architecture
-
-```mermaid
-graph TD
-A[Raw Messy CSV Data] --> B[SQLite Staging Table]
-B --> C[UPPER Text Normalization]
-C --> D[Window Function Duplicate Tracking]
-D --> E[Calculated Salary Variance Output]
-E --> F[Tableau Executive Dashboard]
-```
