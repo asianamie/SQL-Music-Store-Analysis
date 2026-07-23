@@ -11,6 +11,8 @@ Corporate compensation infrastructure often suffers from fragmented data formatt
 1. **Classification Anomalies Detected:** Data entries contained mixed case structures and non-standard titles (e.g., `data analyst` vs `Data Analyst`). This variation skews raw metrics if not handled by explicit text manipulation tools.
 2. **Compensation Imbalances:** Mid-to-Senior level engineers exhibit salary variations up to **$21,500 over average baselines**, highlighting clear opportunities to optimize regional market bands.
 3. **Tiered Compensation Leaders**: Utilizing DENSE_RANK(), top-earning roles within each experience level consistently isolate specialized domain tracks (e.g., Machine Learning Infrastructure and Data Engineering) over generalist roles, establishing market ceilings for each tier.
+<img width="670" height="425" alt="image" src="https://github.com/user-attachments/assets/00ba766f-4d77-4ca6-a9e2-48fe758a37e1" />
+
 4. **Above-Market Role Benchmarking**: Cross-joining role averages against the global baseline (overall_avg) reveals which specialized titles command a premium, allowing organizations to spot high-cost functions exceeding global salary baselines.
 <img width="698" height="139" alt="image" src="https://github.com/user-attachments/assets/5c94b86b-793e-489f-a1e9-69bd61759cff" />
    
